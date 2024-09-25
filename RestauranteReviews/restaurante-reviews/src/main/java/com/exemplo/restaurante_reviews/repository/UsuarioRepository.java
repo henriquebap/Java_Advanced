@@ -1,8 +1,10 @@
 package com.exemplo.restaurante_reviews.repository;
 
+import com.exemplo.restaurantereviews.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.exemplo.restaurante_reviews.Usuario;
+import java.util.Optional;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+    Optional<Usuario> findByEmail(String email);
 }
